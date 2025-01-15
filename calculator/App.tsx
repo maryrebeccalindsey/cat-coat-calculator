@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, CardHeader, CardContent } from '@/components/ui/card';
+import { Card, CardHeader, CardContent } from '@/components/card';
 
 const CatColorCalculator = () => {
   const [sireColor, setSireColor] = useState('');
