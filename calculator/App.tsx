@@ -10,6 +10,8 @@ const CatColorCalculator = () => {
   const [damPattern, setDamPattern] = useState('solid');
   const [sireWhite, setSireWhite] = useState('');
   const [damWhite, setDamWhite] = useState('');
+  const [sireSmoke, setSireSmoke] = useState(false); // Added sireSmoke state
+  const [damSmoke, setDamSmoke] = useState(false); // Added damSmoke state
   const [results, setResults] = useState({
     boys: [] as string[],
     girls: [] as string[],
@@ -39,7 +41,7 @@ const CatColorCalculator = () => {
         girls: [
           'Such mating is prohibited due to the high lethality of kittens',
         ],
-        note: 'Breeding two white cats is not recommended due to health risks.',
+        note: 'Breeding two white cats is not recommended due to health risks and likelihood of deafness.',
       };
     }
 
@@ -95,7 +97,7 @@ const CatColorCalculator = () => {
           if (damColor === 'Tortie' || damColor === 'Blue Tortie') {
             girlsColors.push('Red', 'Cream', 'Tortie', 'Blue Tortie');
           } else if (damColor === 'Black' || damColor === 'Blue') {
-            girlsColors.push('Tortie', 'Blue Tortie');
+            girlsColors.push('Tortie', 'Blue Tortie', 'Black');
           }
         }
       }
@@ -103,9 +105,19 @@ const CatColorCalculator = () => {
       // Tortie inheritance (only females can be tortie and calico colors)
       if (damColor === 'Tortie' || damColor === 'Blue Tortie') {
         boysColors.push('Black', 'Red');
-        girlsColors.push('Tortie', 'Blue Tortie');
+        girlsColors.push('Tortie', 'Blue Tortie', 'Black');
       }
+
+       // If DamColor is Cream
+      if (damColor === 'Cream') {
+         boysColors.push('Cream', 'Red', 'Red Smoke', 'Cream Smoke');
+        girlsColors.push('Tortie', 'Blue Tortie', 'Tortie Smoke', 'Blue Tortie Smoke');
+      }
+      
     };
+    
+    
+   
 
     processBaseColors();
 
@@ -153,6 +165,17 @@ const CatColorCalculator = () => {
       notes.push(
         'Silver gene is dominant, some kittens will inherit the silver coloring.'
       );
+    }
+
+    // Smoke inheritance
+    if (sireSmoke || damSmoke) {
+      const smokeColors = [...boysColors].map((color) => `${color} smoke`);
+      boysColors = [...boysColors, ...smokeColors];
+    
+      const smokeGirls = [...girlsColors].map((color) => `${color} smoke`);
+      girlsColors = [...girlsColors, ...smokeGirls];
+    
+      notes.push('Smoke gene is dominant, some kittens will inherit the smoke coloring.');
     }
 
     // White spotting inheritance
@@ -210,7 +233,7 @@ const CatColorCalculator = () => {
                   onChange={(e) => setSireSilver(e.target.checked)}
                   className="mr-2"
                 />
-                Father has silver or smoky
+                Father has silver or smoke
               </label>
             </div>
 
@@ -228,7 +251,7 @@ const CatColorCalculator = () => {
                     onChange={(e) => setSireWhite(e.target.value)}
                     className="mr-2"
                   />
-                  01 (van)
+                   (van)
                 </label>
                 <label className="flex items-center">
                   <input
@@ -239,7 +262,7 @@ const CatColorCalculator = () => {
                     onChange={(e) => setSireWhite(e.target.value)}
                     className="mr-2"
                   />
-                  02 (harlequin)
+                   (harlequin)
                 </label>
                 <label className="flex items-center">
                   <input
@@ -250,7 +273,7 @@ const CatColorCalculator = () => {
                     onChange={(e) => setSireWhite(e.target.value)}
                     className="mr-2"
                   />
-                  03 (bicolor)
+                   (bicolor)
                 </label>
                 <label className="flex items-center">
                   <input
@@ -261,7 +284,7 @@ const CatColorCalculator = () => {
                     onChange={(e) => setSireWhite(e.target.value)}
                     className="mr-2"
                   />
-                  09 (with white spots)
+                  (with white spots)
                 </label>
               </div>
             </div>
@@ -293,7 +316,7 @@ const CatColorCalculator = () => {
                         onChange={(e) => setSirePattern(e.target.value)}
                         className="mr-2"
                       />
-                      {`${index + 21} (${pattern})`}
+                      {pattern}
                     </label>
                   )
                 )}
@@ -332,7 +355,7 @@ const CatColorCalculator = () => {
                   onChange={(e) => setDamSilver(e.target.checked)}
                   className="mr-2"
                 />
-                Mother has silver or smoky
+                Mother has silver or smoke
               </label>
             </div>
 
@@ -350,7 +373,7 @@ const CatColorCalculator = () => {
                     onChange={(e) => setDamWhite(e.target.value)}
                     className="mr-2"
                   />
-                  01 (van)
+                  (van)
                 </label>
                 <label className="flex items-center">
                   <input
@@ -361,7 +384,7 @@ const CatColorCalculator = () => {
                     onChange={(e) => setDamWhite(e.target.value)}
                     className="mr-2"
                   />
-                  02 (harlequin)
+                  (harlequin)
                 </label>
                 <label className="flex items-center">
                   <input
@@ -372,7 +395,7 @@ const CatColorCalculator = () => {
                     onChange={(e) => setDamWhite(e.target.value)}
                     className="mr-2"
                   />
-                  03 (bicolor)
+                  (bicolor)
                 </label>
                 <label className="flex items-center">
                   <input
@@ -383,7 +406,7 @@ const CatColorCalculator = () => {
                     onChange={(e) => setDamWhite(e.target.value)}
                     className="mr-2"
                   />
-                  09 (with white spots)
+                  (with white spots)
                 </label>
               </div>
             </div>
@@ -415,7 +438,7 @@ const CatColorCalculator = () => {
                         onChange={(e) => setDamPattern(e.target.value)}
                         className="mr-2"
                       />
-                      {`${index + 21} (${pattern})`}
+                     {pattern}
                     </label>
                   )
                 )}
