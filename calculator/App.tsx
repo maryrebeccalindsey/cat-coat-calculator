@@ -202,7 +202,7 @@ const CatColorCalculator = () => {
   return (
     <Card className="w-full max-w-4xl mx-auto">
       <CardHeader>
-        <h2 className="text-2xl font-bold">Cats Color Genetic Calculator</h2>
+        <h2 className="text-2xl font-bold">RedPaw Maine Coons Coat Color Calculator</h2>
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
