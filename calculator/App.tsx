@@ -126,8 +126,6 @@ const CatColorCalculator = () => {
         inheritedPatterns.push(sirePattern);
       } else {
         inheritedPatterns.push('tabby');
-        if (sirePattern === 'blotched' || damPattern === 'blotched')
-          inheritedPatterns.push('blotched');
         if (sirePattern === 'mackerel' || damPattern === 'mackerel')
           inheritedPatterns.push('mackerel');
         if (sirePattern === 'spotted' || damPattern === 'spotted')
@@ -318,7 +316,7 @@ const CatColorCalculator = () => {
                   />
                   Without patterns - solid color
                 </label>
-                {['tabby', 'blotched', 'mackerel', 'spotted', 'ticked'].map(
+                {['tabby', 'mackerel', 'spotted', 'ticked'].map(
                   (pattern, index) => (
                     <label key={pattern} className="flex items-center">
                       <input
@@ -451,7 +449,7 @@ const CatColorCalculator = () => {
                   />
                   Without patterns - solid color
                 </label>
-                {['tabby', 'blotched', 'mackerel', 'spotted', 'ticked'].map(
+                {['tabby', 'mackerel', 'spotted', 'ticked'].map(
                   (pattern, index) => (
                     <label key={pattern} className="flex items-center">
                       <input
