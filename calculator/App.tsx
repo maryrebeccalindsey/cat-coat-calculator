@@ -156,14 +156,14 @@ const CatColorCalculator = () => {
 
     // Silver gene inheritance
     if (sireSilver || damSilver) {
-      const silverColors = [...boysColors].map((color) => `${color} silver`);
+      const silverColors = [...boysColors].map((color) => `${color} silver or smoke`);
       boysColors = [...boysColors, ...silverColors];
 
-      const silverGirls = [...girlsColors].map((color) => `${color} silver`);
+      const silverGirls = [...girlsColors].map((color) => `${color} silver or smoke`);
       girlsColors = [...girlsColors, ...silverGirls];
 
       notes.push(
-        'Silver gene is dominant, some kittens will inherit the silver coloring.'
+        'Silver and smoke genes are dominant; some kittens will definitely inherit the silver or smoke coloring.'
       );
     }
 
