@@ -245,6 +245,16 @@ const CatColorCalculator = () => {
               </label>
               <div className="space-y-2">
                 <label className="flex items-center">
+                     <input
+                        type="radio"
+                        name="sireWhite"
+                        value=""
+                        checked={sireWhite === ""}
+                        onChange={(e) => setSireWhite(e.target.value)}
+                        className="mr-2"
+                      />
+                      None
+                    </label>
                   <input
                     type="radio"
                     name="sireWhite"
@@ -367,6 +377,16 @@ const CatColorCalculator = () => {
               </label>
               <div className="space-y-2">
                 <label className="flex items-center">
+                     <input
+                        type="radio"
+                        name="sireWhite"
+                        value=""
+                        checked={sireWhite === ""}
+                        onChange={(e) => setSireWhite(e.target.value)}
+                        className="mr-2"
+                      />
+                      None
+                    </label>
                   <input
                     type="radio"
                     name="damWhite"
