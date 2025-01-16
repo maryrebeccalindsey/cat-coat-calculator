@@ -286,7 +286,7 @@ const CatColorCalculator = () => {
                     onChange={(e) => setSireWhite(e.target.value)}
                     className="mr-2"
                   />
-                  (with white spots)
+                  (white spots)
                 </label>
               </div>
             </div>
@@ -408,7 +408,7 @@ const CatColorCalculator = () => {
                     onChange={(e) => setDamWhite(e.target.value)}
                     className="mr-2"
                   />
-                  (with white spots)
+                  (white spots)
                 </label>
               </div>
             </div>
