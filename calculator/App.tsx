@@ -10,8 +10,6 @@ const CatColorCalculator = () => {
   const [damPattern, setDamPattern] = useState('solid');
   const [sireWhite, setSireWhite] = useState('');
   const [damWhite, setDamWhite] = useState('');
-  const [sireSmoke, setSireSmoke] = useState(false); // Added sireSmoke state
-  const [damSmoke, setDamSmoke] = useState(false); // Added damSmoke state
   const [results, setResults] = useState({
     boys: [] as string[],
     girls: [] as string[],
@@ -47,7 +45,7 @@ const CatColorCalculator = () => {
 
     // Handle white gene inheritance
     if (sireColor === 'White' || damColor === 'White') {
-      boysColors.push('White', 'Black', 'Black Smoke', 'Blue', 'Blue Smoke');
+      boysColors.push('White', 'Black', 'Blue');
       girlsColors.push(
         'White',
         'Black',
@@ -110,8 +108,8 @@ const CatColorCalculator = () => {
 
        // If DamColor is Cream
       if (damColor === 'Cream') {
-         boysColors.push('Cream', 'Red', 'Red Smoke', 'Cream Smoke');
-        girlsColors.push('Tortie', 'Blue Tortie', 'Tortie Smoke', 'Blue Tortie Smoke');
+         boysColors.push('Cream', 'Red',);
+        girlsColors.push('Tortie', 'Blue Tortie', 'Tortie Smoke');
       }
       
     };
@@ -167,22 +165,26 @@ const CatColorCalculator = () => {
       );
     }
 
-    // Smoke inheritance
-    if (sireSmoke || damSmoke) {
-      const smokeColors = [...boysColors].map((color) => `${color} smoke`);
-      boysColors = [...boysColors, ...smokeColors];
-    
-      const smokeGirls = [...girlsColors].map((color) => `${color} smoke`);
-      girlsColors = [...girlsColors, ...smokeGirls];
-    
-      notes.push('Smoke gene is dominant, some kittens will inherit the smoke coloring.');
-    }
-
     // White spotting inheritance
-    if (sireWhite || damWhite) {
-      notes.push(
-        'White spotting patterns can vary greatly in kittens, even from the same litter.'
-      );
+    // White spotting inheritance
+    if (sireWhite) {
+      const whitePatternText = {
+        '01': 'van',
+        '02': 'harlequin',
+        '03': 'bicolor',
+        '09': 'with white spots'
+      }[sireWhite];
+      notes.push(`Any of the colors can be displayed in ${whitePatternText} pattern.`);
+    }
+  
+    if (damWhite) {
+      const whitePatternText = {
+        '01': 'van',
+        '02': 'harlequin',
+        '03': 'bicolor',
+        '09': 'with white spots'
+      }[damWhite];
+      notes.push(`Any of the colors can be displayed in ${whitePatternText} pattern.`);
     }
 
     // Remove duplicates and sort
