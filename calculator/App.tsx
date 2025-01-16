@@ -170,7 +170,7 @@ const CatColorCalculator = () => {
     if (sireWhite) {
       const whitePatternText = {
         '01': 'van',
-        '02': 'harlequin',
+        '02': 'calico',
         '03': 'bicolor',
         '09': 'with white spots'
       }[sireWhite];
@@ -180,7 +180,7 @@ const CatColorCalculator = () => {
     if (damWhite) {
       const whitePatternText = {
         '01': 'van',
-        '02': 'harlequin',
+        '02': 'calico',
         '03': 'bicolor',
         '09': 'with white spots'
       }[damWhite];
@@ -275,7 +275,7 @@ const CatColorCalculator = () => {
                     onChange={(e) => setSireWhite(e.target.value)}
                     className="mr-2"
                   />
-                   (harlequin)
+                   (calico)
                 </label>
                 <label className="flex items-center">
                   <input
@@ -408,7 +408,7 @@ const CatColorCalculator = () => {
                     onChange={(e) => setDamWhite(e.target.value)}
                     className="mr-2"
                   />
-                  (harlequin)
+                  (calico)
                 </label>
                 <label className="flex items-center">
                   <input
