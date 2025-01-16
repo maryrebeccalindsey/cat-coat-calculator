@@ -34,10 +34,10 @@ const CatColorCalculator = () => {
     if (sireColor === 'White' && damColor === 'White') {
       return {
         boys: [
-          'Such mating is prohibited due to the high lethality of kittens',
+          'Such mating is discouraged due to the high defects in kittens',
         ],
         girls: [
-          'Such mating is prohibited due to the high lethality of kittens',
+          'Such mating is discouraged due to the high defects in kittens',
         ],
         note: 'Breeding two white cats is not recommended due to health risks and likelihood of deafness.',
       };
@@ -83,7 +83,7 @@ const CatColorCalculator = () => {
           girlsColors.push('Red', 'Cream');
         }
         notes.push(
-          'Red coloring in females follows a special inheritance pattern. It is more rare to have red females.'
+          'Red coloring in females follows a special inheritance pattern. It is more rare to have red females. 20% female to 80% male.'
         );
       }
 
@@ -170,9 +170,9 @@ const CatColorCalculator = () => {
         '01': 'van',
         '02': 'calico',
         '03': 'bicolor',
-        '09': 'with white spots'
+        '09': 'white spots'
       }[sireWhite];
-      notes.push(`Any of the colors can be displayed in ${whitePatternText} pattern.`);
+      notes.push(`Any of the colors can be displayed in the ${whitePatternText} pattern.`);
     }
   
     if (damWhite) {
@@ -180,9 +180,9 @@ const CatColorCalculator = () => {
         '01': 'van',
         '02': 'calico',
         '03': 'bicolor',
-        '09': 'with white spots'
+        '09': 'white spots'
       }[damWhite];
-      notes.push(`Any of the colors can be displayed in ${whitePatternText} pattern.`);
+      notes.push(`Any of the colors can be displayed in the ${whitePatternText} pattern.`);
     }
 
     // Remove duplicates and sort
@@ -200,7 +200,7 @@ const CatColorCalculator = () => {
   return (
     <Card className="w-full max-w-4xl mx-auto">
       <CardHeader>
-        <h2 className="text-2xl font-bold">RedPaw Maine Coons Coat Color Calculator</h2>
+        <h2 className="text-2xl font-bold" style={{ color: '#FF0000' }}>RedPaw Maine Coons Coat Color Calculator</h2>
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -209,7 +209,7 @@ const CatColorCalculator = () => {
             <h3 className="text-xl mb-4">Father's color</h3>
             <div className="mb-4">
               <label className="block text-sm font-medium mb-1">
-                Father's basic color (*)
+                Father's basic color
               </label>
               <select
                 className="w-full p-2 border rounded"
@@ -314,7 +314,7 @@ const CatColorCalculator = () => {
                     onChange={(e) => setSirePattern(e.target.value)}
                     className="mr-2"
                   />
-                  Without patterns - solid color
+                  Without patterns(solid colored)
                 </label>
                 {['tabby', 'mackerel', 'spotted', 'ticked'].map(
                   (pattern, index) => (
@@ -340,7 +340,7 @@ const CatColorCalculator = () => {
             <h3 className="text-xl mb-4">Mother's color</h3>
             <div className="mb-4">
               <label className="block text-sm font-medium mb-1">
-                Mother's basic color (*)
+                Mother's basic color
               </label>
               <select
                 className="w-full p-2 border rounded"
@@ -447,7 +447,7 @@ const CatColorCalculator = () => {
                     onChange={(e) => setDamPattern(e.target.value)}
                     className="mr-2"
                   />
-                  Without patterns - solid color
+                  Without patterns(solid colored)
                 </label>
                 {['tabby', 'mackerel', 'spotted', 'ticked'].map(
                   (pattern, index) => (
@@ -481,8 +481,8 @@ const CatColorCalculator = () => {
         {(results.boys.length > 0 || results.girls.length > 0) && (
           <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h4 className="font-bold text-lg mb-2">
-                Boys kittens possible colors:
+              <h4 className="font-bold text-lg mb-2" style={{ color: '#ADD8E6' }}>
+                Boy kittens possible colors:
               </h4>
               <div className="mb-4">
                 <p className="font-semibold">Base colors:</p>
@@ -492,8 +492,8 @@ const CatColorCalculator = () => {
               </div>
             </div>
             <div>
-              <h4 className="font-bold text-lg mb-2">
-                Girls kittens possible colors:
+              <h4 className="font-bold text-lg mb-2" style={{ color: '#FFC0CB' }}>
+                Girl kittens possible colors:
               </h4>
               <div className="mb-4">
                 <p className="font-semibold">Base colors:</p>
