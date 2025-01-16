@@ -380,10 +380,10 @@ const CatColorCalculator = () => {
                 <label className="flex items-center">
                      <input
                         type="radio"
-                        name="sireWhite"
+                        name="damWhite"
                         value=""
-                        checked={sireWhite === ""}
-                        onChange={(e) => setSireWhite(e.target.value)}
+                        checked={damWhite === ""}
+                        onChange={(e) => setDamWhite(e.target.value)}
                         className="mr-2"
                       />
                       None
