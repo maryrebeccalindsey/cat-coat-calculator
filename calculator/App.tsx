@@ -255,6 +255,7 @@ const CatColorCalculator = () => {
                       />
                       None
                     </label>
+                <label className="flex items-center">
                   <input
                     type="radio"
                     name="sireWhite"
@@ -387,6 +388,7 @@ const CatColorCalculator = () => {
                       />
                       None
                     </label>
+                <label className="flex items-center">
                   <input
                     type="radio"
                     name="damWhite"
