@@ -108,6 +108,12 @@ const CatColorCalculator = () => {
          boysColors.push('Cream', 'Red',);
         girlsColors.push('Tortie', 'Blue Tortie');
       }
+
+      //hanlde brown color
+      if (damColor === 'Brown' && sireColor === 'Brown') {
+         boysColors.push('Brown', 'Cinnamon', 'Black');
+        girlsColors.push('Brown', 'Cinnamon', 'Black');
+      }
       
     };
     
@@ -219,6 +225,7 @@ const CatColorCalculator = () => {
                 <option value="Blue">Blue</option>
                 <option value="Cream">Cream</option>
                 <option value="White">White</option>
+                <option value="Brown">Brown</option>
               </select>
             </div>
 
@@ -352,6 +359,7 @@ const CatColorCalculator = () => {
                 <option value="Tortie">Tortie</option>
                 <option value="Blue Tortie">Blue Tortie</option>
                 <option value="White">White</option>
+                <option value="Brown">Brown</option>
               </select>
             </div>
 
