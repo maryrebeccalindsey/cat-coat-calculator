@@ -49,11 +49,8 @@ const CatColorCalculator = () => {
       girlsColors.push(
         'White',
         'Black',
-        'Black Smoke',
         'Blue',
-        'Blue Smoke',
         'Tortie',
-        'Tortie Smoke'
       );
       notes.push(
         'White color is dominant. Some kittens will be white, possibly masking their genetic color.'
@@ -109,7 +106,7 @@ const CatColorCalculator = () => {
        // If DamColor is Cream
       if (damColor === 'Cream') {
          boysColors.push('Cream', 'Red',);
-        girlsColors.push('Tortie', 'Blue Tortie', 'Tortie Smoke');
+        girlsColors.push('Tortie', 'Blue Tortie');
       }
       
     };
