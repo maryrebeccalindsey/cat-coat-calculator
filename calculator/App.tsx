@@ -99,7 +99,7 @@ const CatColorCalculator = () => {
 
       // Tortie inheritance (only females can be tortie and calico colors)
       if (damColor === 'Tortie' || damColor === 'Blue Tortie') {
-        boysColors.push('Black', 'Red');
+        boysColors.push('Black', 'Red', 'Cream');
         girlsColors.push('Tortie', 'Blue Tortie', 'Black');
       }
 
